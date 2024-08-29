@@ -37,6 +37,12 @@ export const listaProdutos:Lista[] = [
         preco: 300.00,
         desc: 'Impressora laser com qualidade de impressão alta',
         imagem: "https://example.com/imagem4.jpg"
+    },
+    {
+        id: 5,
+        nome: 'Fone de Ouvido',
+        preco: 200.00,
+        desc: 'Fone de ouvido sem fio com qualidade de som alta',
+        imagem: "https://example.com/imagem5.jpg"
     }
-    
 ]

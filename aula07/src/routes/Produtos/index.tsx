@@ -1,4 +1,5 @@
-
+import { Link } from "react-router-dom";
+import { listaProdutos } from "../../listaProdutos";
 
 export default function Produtos(){
 
@@ -7,7 +8,36 @@ export default function Produtos(){
 
     return(
       <div>
-        <h1>Olá, mundo sou o Produtos!</h1>
+        <h1>Lista de produtos</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Nome</th>
+              <th>Preco</th>
+              <th>Descricao</th>
+              <th>Imagem</th>
+              <th>Editar</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listaProdutos.map((produto) => (
+              <tr key={produto.id}>
+                <td>{produto.id}</td>
+                <td>{produto.nome}</td>
+                <td>{produto.preco}</td>
+                <td>{produto.desc}</td>
+                <td><img src={produto.imagem} alt={produto.nome}/></td>
+                <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link></td>
+              </tr>
+            ))}
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan={5}>Total de produtos: <span>{listaProdutos.length}</span></td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     );
   }
