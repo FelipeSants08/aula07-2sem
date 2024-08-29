@@ -1,13 +1,8 @@
+import { Lista } from "./types";
 
 //Criar uma lista de produtos eletrônicos com os seguintes dados:
 //id,nome,preco,desc,imagem=path
-type Lista = {
-    id: number,
-    nome: string,
-    preco: number,
-    desc: string,
-    imagem: string
-}
+
 
 export const listaProdutos:Lista[] = [
     {
