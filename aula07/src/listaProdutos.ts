@@ -1,10 +1,4 @@
-type Lista = {
-    id: number,
-    nome: string,
-    preco: number,
-    desc: string,
-    imagem: string
-}
+import { Lista } from "./types";
 
 export const listaProdutos:Lista[] = [
     {
