@@ -46,4 +46,3 @@ export const listaProdutos:Lista[] = [
         imagem: "https://example.com/imagem5.jpg"
     }
 ];
-];
