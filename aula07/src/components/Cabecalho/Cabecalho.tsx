@@ -1,7 +1,6 @@
 import { Header } from "../../style/styled";
 import Menu from "../Menu/Menu";
 import { Lista } from "../../types";
-import { listaProdutos } from "../../listaProdutos";
 
 export default function Cabecalho({listaProps}:{listaProps:Lista[]}){
 
