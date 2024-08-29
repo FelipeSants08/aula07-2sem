@@ -1,5 +1,41 @@
 import { Link } from "react-router-dom";
 import { listaProdutos } from "../../listaProdutos";
+import styled from "styled-components";
+
+const MinhaTabela = styled.table`
+   width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 18px;
+  text-align: left;
+
+  thead{
+    background-color: #009879;
+  color: #6f0f0f;
+}
+&
+th{
+    padding: 12px 15px;
+  border: 1px solid #dddddd;
+}
+&
+tr{
+    &:nth-child(even) {
+        background-color: #f3f3f3;
+      }
+      &:nth-child(odd) {
+        background-color: #ffffff;
+      }
+}
+&
+td{
+    padding: 12px 15px;
+  border: 1px solid #dddddd;
+}
+
+`
+
+
 
 export default function Produtos(){
 
@@ -9,7 +45,7 @@ export default function Produtos(){
     return(
       <div>
         <h1>Lista de Produtos!</h1>
-        <table>
+        <MinhaTabela>
           <thead>
             <tr>
               <th>Id</th>
@@ -20,26 +56,26 @@ export default function Produtos(){
               <th>Editar</th>
             </tr>
           </thead>
-        </table>
-        <tbody>
-          {listaProdutos.map((produto) =>(
-            <tr key={produto.id}>
-              <td>{produto.id}</td>
-              <td>{produto.nome}</td>
-              <td>{produto.preco}</td>
-              <td>{produto.desc}</td>
-              <td><img src={produto.imagem} alt={produto.nome} /></td>
-              <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link></td>            
-            </tr>
-          ))
+          <tbody>
+            {listaProdutos.map((produto) =>(
+              <tr key={produto.id}>
+                <td>{produto.id}</td>
+                <td>{produto.nome}</td>
+                <td>{produto.preco}</td>
+                <td>{produto.desc}</td>
+                <td><img src={produto.imagem} alt={produto.nome} /></td>
+                <td><Link to={`/editar/produtos/${produto.id}`}>Editar</Link></td>            
+              </tr>
+            ))
 
-          }
-        </tbody>
-        <tfoot>
-          <tr>
-            <td colSpan={5}>Total de produtos: <span>{listaProdutos.length}</span></td>
-          </tr>
-        </tfoot>
+            }
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colSpan={6}>Total de produtos: <span>{listaProdutos.length}</span></td>
+            </tr>
+          </tfoot>
+        </MinhaTabela>
       </div>
     );
   }
