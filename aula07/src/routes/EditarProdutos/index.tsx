@@ -16,8 +16,8 @@ export default function EditarProdutos(){
       <div>
         <h1>Olá, mundo sou o EditarProdutos!</h1>
         <div>
-          <h2>ID: {id}</h2>
+          <h2>ID1: {id}</h2>
         </div>
       </div>
     );
-  }
+  } 
